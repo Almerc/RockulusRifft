@@ -9,7 +9,8 @@ This was my first and very hacky attempt at creating a 3D world for the rift usi
 To Play
 =======
 
--Run Oculus Bridge app to open connection to rift.
+-Run Oculus Bridge to open connection to rift.
+
 -Open Index.html
 
 Currently doesn't play music due to it not using the public api.I'll try and get this updated soon.
@@ -17,8 +18,11 @@ Currently doesn't play music due to it not using the public api.I'll try and get
 Controls
 ========
 W - forward
+
 S - backward
+
 A - Left straffe
+
 D - Right straffe
 
 Walk into the cassettes to change track.
@@ -26,8 +30,12 @@ Walk into the cassettes to change track.
 Dependencies 
 ============
 three.js  https://github.com/mrdoob/three.js/
+
 Gamepad.js - http://www.gamepadjs.com/
 Oculus Bridge - https://github.com/Instrument/oculus-bridge
+
 stats.js - https://github.com/mrdoob/stats.js/
+
 rex.js - Antonio Aloisio
+
 Jplayer js - http://jplayer.org/
