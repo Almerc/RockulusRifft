@@ -12,7 +12,7 @@ To Play
 
 -Open Index.html
 
-Currently doesn't play music due to it not using the public api.I'll try and get this updated soon.
+Currently doesn't play music due not using the public api.I'll try and get this updated soon.
 
 Controls
 ========
@@ -20,9 +20,9 @@ W - forward
 
 S - backward
 
-A - Left straffe
+A - Left strafe
 
-D - Right straffe
+D - Right strafe
 
 Walk into the cassettes to change track.
 
