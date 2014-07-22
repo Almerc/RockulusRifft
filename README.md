@@ -12,7 +12,7 @@ To Play
 
 -Open Index.html
 
-Currently doesn't play music due not using the public api.I'll try and get this updated soon.
+NOTE :Currently doesn't play music due not using the public api.I'll try and get this updated soon.
 
 Controls
 ========
@@ -25,6 +25,20 @@ A - Left strafe
 D - Right strafe
 
 Walk into the cassettes to change track.
+
+If not using the rift you can look around using:
+
+I - up
+
+K - down
+
+L - left
+
+J - right
+
+O - tilt right
+
+U - tilt left
 
 Dependencies 
 ============
