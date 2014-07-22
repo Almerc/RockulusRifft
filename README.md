@@ -1,6 +1,8 @@
 RockulusRifft
 =============
 
+![Rockulus rifft](https://github.com/Almerc/RockulusRifft/blob/master/screenshots/Screenshot1.png)
+
 Hack week project to make an Oculus Rift 3D environment that plays MixRadio.
 
 This was my first and very hacky attempt at creating a 3D world for the rift using threejs.
