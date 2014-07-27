@@ -6,7 +6,7 @@
 // Singleton cassettMgr instance
 var cassetteMgr = new rexCassetteMgr()
 
-
+var clientid = "9a9c09df6ce3cfa33721c0a9b1568433"
 // DO NOT CREATE NEW OBJECTS! rexCassetteMgr has to be singleton!!
 function rexCassetteMgr() {
     this.cassettes = new Array();
@@ -18,9 +18,9 @@ function rexCassetteMgr() {
         return cassette;
     }
 
-    this.getDataFromRex = function (uid) {
-        var url = "http://localhost:8080/" + uid;
-        var http_request = new XMLHttpRequest();
+    this.getDataFromMixRadio = function (uid, genre) {
+        var url = "http://api.mixrad.io/1.x/gb/recommendations?domain=music&client_id=" + clientid + "&genre=" + genre;
+        var http_request;
         try {
             // Opera 8.0+, Firefox, Chrome, Safari
             http_request = new XMLHttpRequest();
@@ -29,23 +29,28 @@ function rexCassetteMgr() {
             alert("Your browser broke!");
             return false;
         }
-
+			
+		http_request.open("GET", url, true);
+		http_request.setRequestHeader('Content-Type', 'application/vnd.nokia.ent.productlist+json');
+		http_request.setRequestHeader('X-Requested-With','XMLHttpRequest');;
         http_request.onreadystatechange = function(aa) {
 
             if (http_request.readyState == 4) {
                 var rsp = eval(http_request.responseText);
             }
         }
-        http_request.open("GET", url, true);
-        http_request.send();
+		http_request.send();
+        
+		
     }
 
     // Called by the handleREXResponseCallback
     this._updateCassetteDataCallback = function(rsp) {
+
         for (i=0; i < this.cassettes.length; i++){
             var c = this.cassettes[i];
             var track_name = rsp.items[i].name;
-            var media = rsp.items[i].links[0].href;
+            var media = rsp.items[i].samples.mp3rtmp;
             console.log("MEDIA:" + media);
             var artist = rsp.items[i].creators.performers[0].name;
 

@@ -83,10 +83,13 @@ var getUrlVars = function () {
 // init
 function init() {
     var uid = getUrlVars.uid;
-    if (!uid){
-        alert("UID has not been found!\n Please enter a UID in the URL.\n http://server/this_page.html&uid=123");
-        uid = "123"
-    }
+	var genre = getUrlVars.genre;
+		if (!genre){
+		        alert("Genre has not been found!\n Please enter a Genre in the URL.\n http://server/this_page.html&genre=Rock");
+		        genre = "Pop"
+		    }
+    
+	
 
     var UNITSIZE = 250, units = mapWidth, WALLHEIGHT = UNITSIZE/3;
 
@@ -161,7 +164,7 @@ function init() {
 
         }
     }
-    cassetteMgr.getDataFromRex(uid);
+    cassetteMgr.getDataFromMixRadio(uid, genre);
 
     // CAMERA
     camera = new THREE.PerspectiveCamera(90, window.innerWidth / window.innerHeight, 1, 10000);
