@@ -43,8 +43,8 @@ O - tilt right
 
 U - tilt left
 
-Dependencies 
-============
+Giant shoulders
+===============
 three.js  https://github.com/mrdoob/three.js/
 
 Gamepad.js - http://www.gamepadjs.com/
@@ -53,6 +53,6 @@ Oculus Bridge - https://github.com/Instrument/oculus-bridge
 
 stats.js - https://github.com/mrdoob/stats.js/
 
-rex.js - Antonio Aloisio
-
 Jplayer js - http://jplayer.org/
+
+Rex.js - Massive thank you to Antonio Aloisio for code and 3D modelling contribution.
