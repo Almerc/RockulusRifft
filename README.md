@@ -12,9 +12,10 @@ To Play
 
 -Run Oculus Bridge to open connection to rift.
 
--Open Index.html
+-Locate folder containing index.html and start a local server e.g. python -m SimpleHTTPServer 8000
 
-NOTE :Currently doesn't play music due not using the public api.I'll try and get this updated soon.
+-Load up local host in browser and get rocking with the Rift.
+
 
 Controls
 ========
