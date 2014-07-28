@@ -20,7 +20,8 @@ function rexCassetteMgr() {
 
     this.getDataFromMixRadio = function (uid, genre) {
         var url = "http://api.mixrad.io/1.x/gb/recommendations?domain=music&client_id=" + clientid + "&genre=" + genre;
-        var http_request;
+        var http_request = null;
+		var rsp;
         try {
             // Opera 8.0+, Firefox, Chrome, Safari
             http_request = new XMLHttpRequest();
@@ -30,28 +31,29 @@ function rexCassetteMgr() {
             return false;
         }
 			
-		http_request.open("GET", url, true);
-		http_request.setRequestHeader('Content-Type', 'application/vnd.nokia.ent.productlist+json');
-		http_request.setRequestHeader('X-Requested-With','XMLHttpRequest');;
-        http_request.onreadystatechange = function(aa) {
-
-            if (http_request.readyState == 4) {
-                var rsp = eval(http_request.responseText);
-            }
-        }
+		http_request.open('GET', url, true);
+        
 		http_request.send();
         
+        http_request.onreadystatechange = function(aa) {
+			
+            if (http_request.readyState == 4) {
+                var rsp = JSON.parse(http_request.responseText);
+				handleREXResponseCallback(rsp);
+				
+            }
+        }
+		
 		
     }
 
     // Called by the handleREXResponseCallback
     this._updateCassetteDataCallback = function(rsp) {
-
         for (i=0; i < this.cassettes.length; i++){
             var c = this.cassettes[i];
             var track_name = rsp.items[i].name;
-            var media = rsp.items[i].samples.mp3rtmp;
-            console.log("MEDIA:" + media);
+			var mid = rsp.items[i].id;
+            var media = ("http://api.mixrad.io/1.x/gb/products/" + mid + "/sample/?domain=music&client_id=" + clientid);
             var artist = rsp.items[i].creators.performers[0].name;
 
             c.updateCassetteData(artist, track_name, media);
