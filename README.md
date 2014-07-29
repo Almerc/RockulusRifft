@@ -55,4 +55,4 @@ stats.js - https://github.com/mrdoob/stats.js/
 
 Jplayer js - http://jplayer.org/
 
-Rex.js - Massive thank you to Antonio Aloisio for code and 3D modelling contribution.
+Rex.js - Massive thank you to Antonio Aloisio for code and 3D modelling contributions.
