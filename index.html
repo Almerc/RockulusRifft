@@ -85,7 +85,7 @@ function init() {
     var uid = getUrlVars.uid;
 	var genre = getUrlVars.genre;
 		if (!genre){
-		        alert("Genre has not been found!\n Please enter a Genre in the URL.\n http://server/this_page.html&genre=Rock");
+		        alert("Genre has not been found!\n Please enter a Genre in the URL.\n http://server/this_page.html?genre=Rock");
 		        genre = "Pop"
 		    }
     
@@ -171,26 +171,6 @@ function init() {
     camera.position.set(0, 50, 10);
     camera.lookAt(scene.position);
 
-    // Grid
-    /*
-     grids = [];
-     for (var i = 0; i < 6; ++i) {
-     grids.push(new THREE.Mesh(gridPlane, gridTexture));
-     }
-     grids[0].rotation.y = Math.PI / 2;
-     grids[0].position.x = -GRID_WIDTH / 2;
-     grids[1].rotation.y = Math.PI / 2;
-     grids[1].position.x = GRID_WIDTH / 2;
-     grids[2].rotation.x = Math.PI / 2;
-     grids[2].position.y = -GRID_WIDTH / 2;
-     grids[3].rotation.x = Math.PI / 2;
-     grids[3].position.y = GRID_WIDTH / 2;
-     grids[4].position.z = -GRID_WIDTH / 2;
-     grids[5].position.z = GRID_WIDTH / 2;
-     grids.forEach(function(g) {
-     scene.add(g)
-     });*/
-
     // RENDERER
     renderer = new THREE.WebGLRenderer();
     renderer.setSize(window.innerWidth, window.innerHeight);
@@ -212,17 +192,6 @@ function init() {
 
     // Resize
     window.addEventListener('resize', onResize, false);
-
-    // Objects
-    /*var loader = new THREE.ColladaLoader();
-     loader.load('models/dj_set.dae', function(collada) {
-     var model = collada.scene;
-     model.rotation.x = -Math.PI / 2;
-     model.scale.set(100, 100, 100);
-     model.castShadow = model.receiveShadow = true;
-     model.position.y = -100
-     scene.add(model);
-     });*/
 
     // LIGHTS
 

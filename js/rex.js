@@ -1,6 +1,6 @@
 /**
  * Rex cassette class
- * Author: Antonio Aloisio - <Antonio.aloisio@nokia.com>
+ * 
  */
 
 // Singleton cassettMgr instance
