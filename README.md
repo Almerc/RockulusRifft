@@ -3,9 +3,8 @@ RockulusRifft
 
 ![Rockulus rifft](https://github.com/Almerc/RockulusRifft/blob/master/screenshots/Screenshot1.png)
 
-Hack week project to make an Oculus Rift 3D environment that plays MixRadio.
+A hack week project to create an Oculus Rift supported 3D environment for MixRadio.
 
-This was my first and very hacky attempt at creating a 3D world for the rift using threejs.
 
 To Play
 =======
@@ -16,6 +15,9 @@ To Play
 
 -Load up local host in browser and get rocking with the Rift.
 
+-Walk into the cassettes to change tracks.
+
+*Currently plays 30 second clips of pop genre recommendations from MixRadio.*
 
 Controls
 ========
@@ -27,7 +29,7 @@ A - Left strafe
 
 D - Right strafe
 
-Walk into the cassettes to change track.
+
 
 If not using the rift you can look around using:
 
@@ -55,4 +57,4 @@ stats.js - https://github.com/mrdoob/stats.js/
 
 Jplayer js - http://jplayer.org/
 
-Rex.js - Massive thank you to Antonio Aloisio for code and 3D modelling contributions.
+Massive thank you to Antonio Aloisio for additional code and 3D modelling contributions.
