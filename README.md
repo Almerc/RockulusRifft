@@ -9,7 +9,7 @@ A hack week project to create an Oculus Rift supported 3D environment for MixRad
 To Play
 =======
 
--Install and run Oculus Bridge (in folder above).
+-Install and run Oculus Bridge (in Oculus Bridge folder).
 
 -Go here --> http://almerc.github.io/RockulusRifft
 
