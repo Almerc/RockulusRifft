@@ -9,11 +9,9 @@ A hack week project to create an Oculus Rift supported 3D environment for MixRad
 To Play
 =======
 
--Run Oculus Bridge to open connection to rift.
+-Install and run Oculus Bridge (in folder above).
 
--Locate folder containing index.html and start a local server e.g. python -m SimpleHTTPServer 8000
-
--Load up local host in browser and get rocking with the Rift.
+-Go here --> http://almerc.github.io/RockulusRifft
 
 -Walk into the cassettes to change tracks.
 
