@@ -15,6 +15,7 @@
 <script src="js/OculusRiftEffect.js"></script>
 <script src="js/OculusBridge.min.js"></script>
 <script src="js/THREEx.KeyboardState.js"></script>
+<script src="js/controls/FirstPersonControls.js"></script>
 <script src="js/ColladaLoader.js"></script>
 <script src="js/rex.js"></script>
 
@@ -26,6 +27,7 @@ var clock, time;
 var bgScene, bgCam;
 var keyboard = new THREEx.KeyboardState();
 var riftConnected = false;
+var controls;
 
 
 
@@ -177,7 +179,6 @@ function init() {
     renderer = new THREE.WebGLRenderer();
     renderer.setSize(window.innerWidth, window.innerHeight);
     renderer.setClearColor(new THREE.Color(0x000033), 2);
-    
 
     // RIFT
     rift = new THREE.OculusRiftEffect(renderer, {
@@ -260,7 +261,15 @@ function init() {
     stats.domElement.style.left = '0px';
 	document.body.appendChild(stats.domElement);
 	
-    riftBridge.connect()
+    riftBridge.connect();
+	
+	// CONTROLS
+	if(!riftConnected){
+	controls = new THREE.FirstPersonControls( camera );
+    controls.movementSpeed = 100; 
+	controls.lookSpeed = 0.08; 
+	controls.lookVertical = false;
+	}
 
 }
 
@@ -375,47 +384,34 @@ function animate() {
         bodyPosition.y -=moveDistance;
     }
     // move camera LEFT/RIGHT
-    if (keyboard.pressed("A")) {
-		if(riftConnected){
-		nextPosition = (new THREE.Vector3(bodyPosition.x -= Math.cos(viewAngle+Math.PI/2) * step,bodyPosition.y,bodyPosition.z -= Math.sin(viewAngle+Math.PI/2) * step));
-		}else{
-		bodyPosition.x -= step;
-		}
+if(riftConnected){
+    if (keyboard.pressed("A")) {		
+		nextPosition = (new THREE.Vector3(bodyPosition.x -= Math.cos(viewAngle+Math.PI/2) * step,bodyPosition.y,bodyPosition.z -= Math.sin(viewAngle+Math.PI/2) * step));}
         if(!checkWallCollision(nextPosition)){
             bodyPosition = nextPosition;
         }
-    }
     if (keyboard.pressed("D")) {
-		if(riftConnected){
 		nextPosition = (new THREE.Vector3(bodyPosition.x += Math.cos(viewAngle+Math.PI/2) * step,bodyPosition.y,bodyPosition.z += Math.sin(viewAngle+Math.PI/2) * step));
-		}else{
-		bodyPosition.x += step;
-		}
         if(!checkWallCollision(bodyPosition)){
 			bodyPosition = nextPosition;
         }
     }
     // move camera FORWARD/BACKWARD
     if (keyboard.pressed("W")) {
-		if (riftConnected){
 		nextPosition = (new THREE.Vector3(bodyPosition.x += Math.cos(viewAngle) * step,bodyPosition.y,bodyPosition.z += Math.sin(viewAngle) * step));
-		}else{
-		bodyPosition.z -= step;
-		}
+		
         if(!checkWallCollision(nextPosition)){
             bodyPosition = nextPosition;
         }
-    }camera.quaternion.x
+    }
     if (keyboard.pressed("S")) {
-		if (riftConnected){
 		nextPosition = (new THREE.Vector3(bodyPosition.x -= Math.cos(viewAngle) * step,bodyPosition.y,bodyPosition.z -= Math.sin(viewAngle) * step));
-		}else{
-		bodyPosition.z += step;
-		}
-        if(!checkWallCollision(nextPosition)){
+        
+		if(!checkWallCollision(nextPosition)){
 			bodyPosition = nextPosition;
         }
     }
+}
 	
 	if(!checkWallCollision (nextPosition)){
     updateInput(delta);
@@ -426,7 +422,10 @@ function animate() {
     sphere.rotation.y += .010;
 
     cassetteMgr.animateCassette();
-
+	
+	if(!riftConnected){
+	controls.update(delta);
+    }
     stats.update();
 
     requestAnimationFrame(animate);
