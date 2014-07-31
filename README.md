@@ -19,7 +19,8 @@ To Play
 
 Controls
 ========
-*Controls only work properly using rift. Toggle on the way!*
+
+Use the mouse to look around when rift not connected.
 
 W - forward
 
@@ -29,21 +30,6 @@ A - Left strafe
 
 D - Right strafe
 
-
-
-If not using the rift you can look around using:
-
-I - up
-
-K - down
-
-L - left
-
-J - right
-
-O - tilt right
-
-U - tilt left
 
 Giant shoulders
 ===============
@@ -57,4 +43,4 @@ stats.js - https://github.com/mrdoob/stats.js/
 
 Jplayer js - http://jplayer.org/
 
-Massive thank you to Antonio Aloisio for additional code and 3D modelling contributions.
+Thank you to Antonio Aloisio for additional code and 3D modelling contributions.
