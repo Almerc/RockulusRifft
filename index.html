@@ -88,8 +88,7 @@ function init() {
     var uid = getUrlVars.uid;
 	var genre = getUrlVars.genre;
 		if (!genre){
-		        alert("Genre has not been found!\n Please enter a Genre in the URL.\n http://server/this_page.html?genre=Rock");
-		        genre = "Pop"
+		        genre = "Pop";
 		    }
     
 	
@@ -172,7 +171,7 @@ function init() {
     // CAMERA
     camera = new THREE.PerspectiveCamera(90, window.innerWidth / window.innerHeight, 1, 10000);
     camera.position.set(0, 50, 10);
-    camera.lookAt(scene.position);
+    camera.lookAt(bodyPosition);
 
     // RENDERER
     renderer = new THREE.WebGLRenderer();
