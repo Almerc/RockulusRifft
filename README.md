@@ -11,7 +11,7 @@ To Play
 
 -Install and run Oculus Bridge (from Oculus Bridge folder or https://github.com/Instrument/oculus-bridge).
 
--PLAY --> http://almerc.github.io/RockulusRifft
+-Go here --> http://almerc.github.io/RockulusRifft
 
 -Walk into the cassettes to change tracks.
 
