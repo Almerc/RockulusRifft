@@ -22,13 +22,13 @@ Controls
 
 Use the mouse to look around when rift not connected.
 
-W - forward
+Up / W - forward
 
-S - backward
+Down / S - backward
 
-A - Left strafe
+Left / A - Left strafe
 
-D - Right strafe
+Right / D - Right strafe
 
 
 Giant shoulders
