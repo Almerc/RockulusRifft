@@ -21,6 +21,7 @@ Controls
 ========
 
 Use the mouse to look around when rift not connected.
+*NOTE: There is only collision detection for the rift controls*
 
 Up / W - forward
 
@@ -35,12 +36,12 @@ Giant shoulders
 ===============
 three.js  https://github.com/mrdoob/three.js/
 
-Gamepad.js - http://www.gamepadjs.com/
-
 Oculus Bridge - https://github.com/Instrument/oculus-bridge
 
 stats.js - https://github.com/mrdoob/stats.js/
 
 Jplayer js - http://jplayer.org/
+
+keyboardstate.js - https://github.com/jeromeetienne/threex.keyboardstate
 
 Thank you to Antonio Aloisio for additional code and 3D modelling contributions.
