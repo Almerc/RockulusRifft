@@ -15,7 +15,7 @@ To Play
 
 -Walk into the cassettes to change tracks.
 
-*Currently plays 30 second clips of pop genre recommendations from MixRadio.*
+*Currently plays 30 second clips of pop genre recommendations from MixRadio. You can query other genres by adding genre parameter in the url e.g /?genre=Metal*
 
 Controls
 ========
