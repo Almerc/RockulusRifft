@@ -34,7 +34,7 @@ Left / A - Left strafe
 Right / D - Right strafe
 
 
-Giant shoulders
+Dependencies
 ===============
 three.js  https://github.com/mrdoob/three.js/
 
